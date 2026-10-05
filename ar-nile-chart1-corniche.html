@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>توزيع الأراضي المحصورة على كورنيش النيل بين القاهرة والجيزة</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Tajawal",sans-serif;background:#fff;color:#2c2c2a;direction:rtl;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-right:3px solid #378ADD;padding-right:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.06em;color:var(--gray);margin-bottom:2px;}
+  .title{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .subtitle{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-right:3px solid #378ADD;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .source{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){
+    body{background:#1a1a18;color:#d3d1c7;}
+    .callout{background:#2c2c2a;color:#b4b2a9;}
+    .subtitle,.source{color:#b4b2a9;}
+  }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="hdr">
+    <p class="tag">زاوية ثالثة · إنفوجرافيك ① من ⑥</p>
+    <p class="title">توزيع الأراضي المحصورة على كورنيش النيل بين القاهرة والجيزة</p>
+    <p class="subtitle">745 فدانًا في 192 موقعًا — أغلبها في القاهرة</p>
+  </div>
+  <div class="callout">"745 فدانًا من الأراضي والمباني المطلة على كورنيش النيل في القاهرة والجيزة — 430 فدانًا في 110 مواقع بالقاهرة و315 فدانًا في 82 موقعًا بالجيزة"</div>
+  
+<div style="position:relative;width:100%;height:clamp(190px,50vw,220px)"><canvas id="c"></canvas></div>
+<div class="cards" style="margin-top:10px">
+  <div class="card" style="background:#eef4fb;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a;margin-bottom:3px">القاهرة</p>
+    <p style="font-size:clamp(18px,5vw,24px);font-weight:800;color:#378ADD">430 فدان</p>
+    <p style="font-size:clamp(9px,2vw,10px);color:#888780;margin-top:2px">110 موقع</p>
+  </div>
+  <div class="card" style="background:#edf7f3;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a;margin-bottom:3px">الجيزة</p>
+    <p style="font-size:clamp(18px,5vw,24px);font-weight:800;color:#1D9E75">315 فدان</p>
+    <p style="font-size:clamp(9px,2vw,10px);color:#888780;margin-top:2px">82 موقع</p>
+  </div>
+  <div class="card" style="background:#f1efe8;text-align:center">
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a;margin-bottom:3px">الإجمالي</p>
+    <p style="font-size:clamp(18px,5vw,24px);font-weight:800;color:#BA7517">745 فدان</p>
+    <p style="font-size:clamp(9px,2vw,10px);color:#888780;margin-top:2px">192 موقع</p>
+  </div>
+</div>
+<script>
+(function(){
+  var dk=matchMedia("(prefers-color-scheme:dark)").matches;
+  var tc=dk?"#b4b2a9":"#5f5e5a",gc=dk?"rgba(255,255,255,.08)":"rgba(0,0,0,.07)";
+  var blue=dk?"#85B7EB":"#378ADD",teal=dk?"#5DCAA5":"#1D9E75";
+  new Chart(document.getElementById("c"),{type:"bar",
+    data:{labels:["القاهرة","الجيزة"],datasets:[
+      {label:"المساحة (فدان)",data:[430,315],backgroundColor:[blue,teal],borderWidth:0,borderRadius:6,yAxisID:"y"},
+      {label:"عدد المواقع",data:[110,82],backgroundColor:[blue+"55",teal+"55"],borderWidth:0,borderRadius:6,yAxisID:"y2"}
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,animation:{duration:900,easing:"easeOutQuart"},
+    plugins:{legend:{display:true,position:"top",align:"end",labels:{color:tc,font:{size:10,family:"Tajawal"},boxWidth:10,boxHeight:10}},
+    tooltip:{backgroundColor:dk?"#2c2c2a":"#fff",borderColor:dk?"rgba(255,255,255,.1)":"rgba(0,0,0,.08)",borderWidth:1,titleColor:dk?"#d3d1c7":"#2c2c2a",bodyColor:tc,padding:10,titleFont:{family:"Tajawal"},bodyFont:{family:"Tajawal"}}},
+    scales:{x:{ticks:{color:tc,font:{size:12,family:"Tajawal",weight:"700"}},grid:{display:false},border:{color:gc}},
+    y:{ticks:{color:tc,font:{size:9,family:"Tajawal"},callback:function(v){return v+" فدان";}},grid:{color:gc},border:{display:false},title:{display:true,text:"فدان",color:tc,font:{size:9,family:"Tajawal"}}},
+    y2:{position:"left",ticks:{color:tc,font:{size:9,family:"Tajawal"},callback:function(v){return v+" موقع";}},grid:{display:false},border:{display:false},title:{display:true,text:"موقع",color:tc,font:{size:9,family:"Tajawal"}}}}}
+  });
+})();
+</script>
+  <p class="source">المصدر: إعلان صندوق التنمية الحضرية / تصريحات رئيسه خالد صديق</p>
+</div>
+<script>
+(function(){
+  function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+  setTimeout(notify,1400);window.addEventListener("resize",notify);
+  try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}
+})();
+</script>
+</body></html>

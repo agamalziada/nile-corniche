@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>صفقات الاستثمار الخليجي في الأراضي الساحلية المصرية (مذكورة في التحقيق)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--blue:#378ADD;--coral:#D85A30;--teal:#1D9E75;--amber:#BA7517;--gray:#888780;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:"Tajawal",sans-serif;background:#fff;color:#2c2c2a;direction:rtl;}
+  #root{padding:clamp(12px,3vw,20px);}
+  .hdr{border-right:3px solid #BA7517;padding-right:10px;margin-bottom:10px;}
+  .tag{font-size:clamp(9px,2vw,10px);font-weight:700;letter-spacing:.06em;color:var(--gray);margin-bottom:2px;}
+  .title{font-size:clamp(13px,3.5vw,15px);font-weight:700;line-height:1.4;margin-bottom:2px;}
+  .subtitle{font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;}
+  .callout{background:#f1efe8;border-right:3px solid #BA7517;padding:8px 11px;font-size:clamp(11px,2.5vw,12px);color:#5f5e5a;line-height:1.6;margin:9px 0;font-style:italic;}
+  .source{font-size:clamp(9px,2vw,10px);color:var(--gray);margin-top:10px;line-height:1.4;}
+  .cards{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px;}
+  .card{flex:1;min-width:min(100px,44%);border-radius:8px;padding:clamp(9px,2.5vw,12px) clamp(10px,3vw,13px);}
+  @media(prefers-color-scheme:dark){
+    body{background:#1a1a18;color:#d3d1c7;}
+    .callout{background:#2c2c2a;color:#b4b2a9;}
+    .subtitle,.source{color:#b4b2a9;}
+  }
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="hdr">
+    <p class="tag">زاوية ثالثة · إنفوجرافيك ④ من ⑥</p>
+    <p class="title">صفقات الاستثمار الخليجي في الأراضي الساحلية المصرية (مذكورة في التحقيق)</p>
+    <p class="subtitle">رأس الحكمة وعلم الروم والجفيرة — ثم كورنيش النيل</p>
+  </div>
+  <div class="callout">"ثلاث صفقات ساحلية مع مستثمرين خليجيين تسبق طرح أراضي كورنيش النيل — تشكّل نمطًا من التنازل عن الواجهات المائية المصرية"</div>
+  
+<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:12px">
+  <div style="background:#fdf6e8;border-radius:8px;padding:clamp(9px,2.5vw,12px);border-right:4px solid #BA7517">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;margin-bottom:4px">
+      <p style="font-size:clamp(11px,3vw,13px);font-weight:700;color:#2c2c2a">رأس الحكمة</p>
+      <p style="font-size:clamp(10px,2.5vw,11px);font-weight:700;color:#BA7517">فبراير 2024</p>
+    </div>
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a">صندوق أبوظبي السيادي — أكبر صفقة استثمار أجنبي في تاريخ مصر</p>
+  </div>
+  <div style="background:#fdf6e8;border-radius:8px;padding:clamp(9px,2.5vw,12px);border-right:4px solid #BA7517">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;margin-bottom:4px">
+      <p style="font-size:clamp(11px,3vw,13px);font-weight:700;color:#2c2c2a">علم الروم (الساحل الشمالي)</p>
+      <p style="font-size:clamp(10px,2.5vw,11px);font-weight:700;color:#888780">قطر</p>
+    </div>
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a">الديار القطرية — صفقة ساحلية على البحر المتوسط</p>
+  </div>
+  <div style="background:#faece7;border-radius:8px;padding:clamp(9px,2.5vw,12px);border-right:4px solid #D85A30">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;margin-bottom:4px">
+      <p style="font-size:clamp(11px,3vw,13px);font-weight:700;color:#2c2c2a">الجفيرة (الساحل الشمالي الغربي)</p>
+      <p style="font-size:clamp(10px,2.5vw,11px);font-weight:700;color:#D85A30">2026 — مرتقبة</p>
+    </div>
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a">إماراتيون — القيمة المعلنة: <strong style="color:#D85A30">135 مليار جنيه</strong></p>
+  </div>
+  <div style="background:#eef4fb;border-radius:8px;padding:clamp(9px,2.5vw,12px);border-right:4px solid #378ADD">
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px;margin-bottom:4px">
+      <p style="font-size:clamp(11px,3vw,13px);font-weight:700;color:#2c2c2a">كورنيش النيل (قيد التحضير)</p>
+      <p style="font-size:clamp(10px,2.5vw,11px);font-weight:700;color:#378ADD">2026</p>
+    </div>
+    <p style="font-size:clamp(9px,2.2vw,10px);color:#5f5e5a">إماراتيون وسعوديون وقطريون — 136 قطعة قيد الطرح</p>
+  </div>
+</div>
+<div style="background:#2c2c2a;border-radius:8px;padding:clamp(10px,3vw,13px)">
+  <p style="font-size:clamp(11px,2.8vw,12px);color:rgba(255,255,255,.8)">ثلاث صفقات ساحلية سابقة مع مستثمرين خليجيين تسبق طرح أراضي كورنيش النيل — <strong style="color:#BA7517">نمط من التنازل عن الواجهات المائية المصرية</strong></p>
+</div>
+  <p class="source">المصدر: تقارير إعلامية متعددة / تصريحات رسمية مصرية</p>
+</div>
+<script>
+(function(){
+  function notify(){var h=document.getElementById("root").offsetHeight;window.parent.postMessage({type:"chartResize",height:h},"*");}
+  setTimeout(notify,1400);window.addEventListener("resize",notify);
+  try{new ResizeObserver(function(){setTimeout(notify,80);}).observe(document.body);}catch(e){}
+})();
+</script>
+</body></html>
